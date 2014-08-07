@@ -1,0 +1,80 @@
+-------------------------------------------------------------------------------
+Test set: org.mule.examples.CustomBusinessEventsTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.219 sec <<< FAILURE!
+calculateDiscountTest(org.mule.examples.CustomBusinessEventsTest)  Time elapsed: 2.012 sec  <<< ERROR!
+org.mule.api.config.ConfigurationException: Unexpected exception parsing XML document from URL [file:/c:/incoming/examples/custom-business-events/target/test-classes/custom-business-events.xml]; nested exception is org.springframework.beans.BeanInstantiationException: Could not instantiate bean class [com.mulesoft.mule.tracking.config.NamespaceHandler]: Constructor threw exception; nested exception is org.mule.api.MuleRuntimeException: com.mulesource.licm.impl.InvalidLicenseKeyException: de.schlichtherle.license.NoLicenseInstalledException: There is no license certificate installed for MuleSource Enterprise Edition. (org.mule.api.lifecycle.InitialisationException)
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:49)
+	at org.mule.config.builders.AbstractResourceConfigurationBuilder.configure(AbstractResourceConfigurationBuilder.java:69)
+	at org.mule.context.DefaultMuleContextFactory$1.configure(DefaultMuleContextFactory.java:84)
+	at org.mule.context.DefaultMuleContextFactory.doCreateMuleContext(DefaultMuleContextFactory.java:217)
+	at org.mule.context.DefaultMuleContextFactory.createMuleContext(DefaultMuleContextFactory.java:76)
+	at org.mule.tck.junit4.AbstractMuleContextTestCase.createMuleContext(AbstractMuleContextTestCase.java:234)
+	at org.mule.tck.junit4.AbstractMuleContextTestCase.setUpMuleContext(AbstractMuleContextTestCase.java:143)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:46)
+	at org.junit.internal.runners.statements.FailOnTimeout$1.run(FailOnTimeout.java:28)
+Caused by: org.mule.api.lifecycle.InitialisationException: Unexpected exception parsing XML document from URL [file:/c:/incoming/examples/custom-business-events/target/test-classes/custom-business-events.xml]; nested exception is org.springframework.beans.BeanInstantiationException: Could not instantiate bean class [com.mulesoft.mule.tracking.config.NamespaceHandler]: Constructor threw exception; nested exception is org.mule.api.MuleRuntimeException: com.mulesource.licm.impl.InvalidLicenseKeyException: de.schlichtherle.license.NoLicenseInstalledException: There is no license certificate installed for MuleSource Enterprise Edition.
+	at org.mule.registry.AbstractRegistry.initialise(AbstractRegistry.java:113)
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.createSpringRegistry(SpringXmlConfigurationBuilder.java:135)
+	at org.mule.config.spring.SpringXmlConfigurationBuilder.doConfigure(SpringXmlConfigurationBuilder.java:90)
+	at org.mule.config.builders.AbstractConfigurationBuilder.configure(AbstractConfigurationBuilder.java:43)
+	... 17 more
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Unexpected exception parsing XML document from URL [file:/c:/incoming/examples/custom-business-events/target/test-classes/custom-business-events.xml]; nested exception is org.springframework.beans.BeanInstantiationException: Could not instantiate bean class [com.mulesoft.mule.tracking.config.NamespaceHandler]: Constructor threw exception; nested exception is org.mule.api.MuleRuntimeException: com.mulesource.licm.impl.InvalidLicenseKeyException: de.schlichtherle.license.NoLicenseInstalledException: There is no license certificate installed for MuleSource Enterprise Edition.
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:412)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:334)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:174)
+	at org.mule.config.spring.MuleArtifactContext.loadBeanDefinitions(MuleArtifactContext.java:106)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:451)
+	at org.mule.config.spring.SpringRegistry.doInitialise(SpringRegistry.java:86)
+	at org.mule.registry.AbstractRegistry.initialise(AbstractRegistry.java:105)
+	... 20 more
+Caused by: org.springframework.beans.BeanInstantiationException: Could not instantiate bean class [com.mulesoft.mule.tracking.config.NamespaceHandler]: Constructor threw exception; nested exception is org.mule.api.MuleRuntimeException: com.mulesource.licm.impl.InvalidLicenseKeyException: de.schlichtherle.license.NoLicenseInstalledException: There is no license certificate installed for MuleSource Enterprise Edition.
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:105)
+	at org.springframework.beans.factory.xml.DefaultNamespaceHandlerResolver.resolve(DefaultNamespaceHandlerResolver.java:129)
+	at org.mule.config.spring.MuleHierarchicalBeanDefinitionParserDelegate.parseCustomElement(MuleHierarchicalBeanDefinitionParserDelegate.java:72)
+	at org.mule.config.spring.MuleHierarchicalBeanDefinitionParserDelegate.parseCustomElement(MuleHierarchicalBeanDefinitionParserDelegate.java:127)
+	at org.mule.config.spring.MuleHierarchicalBeanDefinitionParserDelegate.parseCustomElement(MuleHierarchicalBeanDefinitionParserDelegate.java:127)
+	at org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(BeanDefinitionParserDelegate.java:1428)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:190)
+	at org.mule.config.spring.MuleBeanDefinitionDocumentReader.parseBeanDefinitions(MuleBeanDefinitionDocumentReader.java:51)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:140)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:111)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:493)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:390)
+	... 29 more
+Caused by: org.mule.api.MuleRuntimeException: com.mulesource.licm.impl.InvalidLicenseKeyException: de.schlichtherle.license.NoLicenseInstalledException: There is no license certificate installed for MuleSource Enterprise Edition.
+	at com.mulesoft.mule.config.license.MuleEmbeddedLicenseCheck.checkLicense(MuleEmbeddedLicenseCheck.java:32)
+	at com.mulesoft.mule.config.license.LicenseCheckAspect.checkLicense(LicenseCheckAspect.aj:23)
+	at com.mulesoft.mule.config.license.LicenseCheckAspect.ajc$before$com_mulesoft_mule_config_license_LicenseCheckAspect$1$679d227a(LicenseCheckAspect.aj:18)
+	at com.mulesoft.mule.tracking.config.NamespaceHandler.<init>(NamespaceHandler.java:22)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:148)
+	... 41 more
+Caused by: com.mulesource.licm.impl.InvalidLicenseKeyException: de.schlichtherle.license.NoLicenseInstalledException: There is no license certificate installed for MuleSource Enterprise Edition.
+	at com.mulesource.licm.impl.TrueLicenseHelper.validateLicenseKey(TrueLicenseHelper.java:233)
+	at com.mulesource.licm.impl.MuleLicenseManager.validate(MuleLicenseManager.java:61)
+	at com.mulesoft.mule.config.license.MuleEmbeddedLicenseCheck.loadLicenseKey(MuleEmbeddedLicenseCheck.java:21)
+	at com.mulesoft.mule.config.license.MuleEmbeddedLicenseCheck.checkLicense(MuleEmbeddedLicenseCheck.java:28)
+	... 49 more
+Caused by: de.schlichtherle.license.NoLicenseInstalledException: There is no license certificate installed for MuleSource Enterprise Edition.
+	at de.schlichtherle.license.ftp.LicenseManager.verify(Unknown Source)
+	at de.schlichtherle.license.LicenseManager.verify(Unknown Source)
+	at com.mulesource.licm.impl.TrueLicenseHelper.validateLicenseKey(TrueLicenseHelper.java:228)
+	... 52 more
+
